@@ -3,14 +3,10 @@
 phpVMS v7 module for Extended VA features
 
 > [!IMPORTANT]
-> Minimum required phpVMS v7 version is `phpVms 7.0.52-dev.g0421186c64` / 05.JAN.2025
+> Minimum required phpVMS v7 version is `phpVms 7.0.10`
+> Minimum required PHP version is `8.1.x`
 
-> [!TIP]
-> * Module supports **only** php8.1+ and laravel10
-> * _php8.0 and laravel9 compatible latest version: v3.3.1_
-> * _php7.4 and laravel8 compatible latest version: v3.0.19_
-
-Module blades are designed for themes using **Bootstrap v5.x** and FontAwesome v5.x (not v6) icons.
+Module blades are designed for themes using **Bootstrap v5.x** and **FontAwesome v5.x** (not v6) icons.
 
 Using this module along with *Disposable Basic* and *Disposable Theme* is advised but not mandatory. This module pack aims to cover extended needs of any Virtual Airline with some new features, widgets and backend tools. Provides;
 
@@ -376,6 +372,11 @@ _Not providing attribution link will result in removal of access and no support 
 * Notam Management airport dropdown does not select already assigned/saved airport! Therefore still using old logic and not switched to ajax search.  
 
 ## Release / Update Notes
+
+26.JUL.26
+
+* Fix/improvement for automated user deletion (to removed awards if any issued)
+* Added tour leg `normalizer` feature to remove ownership and tour details from flights
 
 29.OCT.25
 
