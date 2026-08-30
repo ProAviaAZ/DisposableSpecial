@@ -200,9 +200,16 @@
         var OpenSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
         var OpenTopo = L.tileLayer.provider('OpenTopoMap');
         var WorldTopo = L.tileLayer.provider('Esri.WorldTopoMap');
+        // Define Additional Map Overlays
+        var OpenAIP = L.tileLayer('https://{s}.api.tiles.openaip.net/api/data/openaip/{z}/{x}/{y}.png?apiKey={{ $openaip_apikey }}', {
+          attribution: '&copy; <a href="https://www.openaip.net/">openAIP Data</a>',
+          subdomains: ['a', 'b', 'c'],
+          minZoom: 2,
+          maxZoom: 14
+        });
         // Define Control Groups
         var BaseLayers = {"Dark Matter": DarkMatter, "NatGEO World": NatGeo, "OpenSM Mapnik": OpenSM, "Open Topo": OpenTopo, "World Topo": WorldTopo};
-        var Overlays = {"Tour Airports": mAirports, "Tour Legs": mFlights};
+        var Overlays = {"Tour Airports": mAirports, "Tour Legs": mFlights, "OpenAIP Data": OpenAIP};
         // Define Map and Add Control Box
         var TourMap = L.map('tourmap', {center: {{ $mapCenter }}, layers: [DarkMatter, mAirports, mFlights]}).fitBounds(mBoundary.getBounds().pad(0.2));
         L.control.layers(BaseLayers, Overlays).addTo(TourMap);
