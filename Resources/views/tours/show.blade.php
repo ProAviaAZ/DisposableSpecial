@@ -191,7 +191,11 @@
           var FLT_{{ $flight['id'] }} = L.geodesic({{ $flight['geod'] }}, {weight: 2, opacity: 0.8, steps: 5, color: {{ $flight['geoc'] }}}).bindPopup({!! "'".$flight['pop']."'" !!}).addTo(mFlights);
         @endforeach
         // Define Base Layers For Control Box
-        var DarkMatter = L.tileLayer.provider('CartoDB.DarkMatter');
+        var DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key={{ $carto_apikey }}', {
+	        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	        subdomains: 'abcd',
+	        maxZoom: 20
+        });
         var NatGeo = L.tileLayer.provider('Esri.NatGeoWorldMap');
         var OpenSM = L.tileLayer.provider('OpenStreetMap.Mapnik');
         var OpenTopo = L.tileLayer.provider('OpenTopoMap');

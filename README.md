@@ -193,6 +193,15 @@ You can use Postman or Apidog (or a similar tool) to test api access easily and 
 
 Below you can find some details about how this module is designed and how it behaves according to your configuration options.
 
+### Carto API Key (for Maps)
+
+By default Tour Map uses Carto's DarkMatter as the base layer and Carto requires an API key for access. Same key is (and should be) used for both this module and DisposableBasic, so if you already completed this step for DBasic, then it is ok.
+
+There is a free tier option available to anyone with a domain name. Kindly check [Carto Website](https://carto.com/basemaps/apikey/), fill in the form according to their explanations with your VA domain to obtain your key. 
+
+Once you have the API Key via email, add it to the module settings under `API Services` > `Carto API Key` section.   
+_Clean your browser cache (CTRL + F5) if the maps still show the notice about access._  
+
 ### How to define Tours ?
 
 First you need to define your tour from *Admin > Disposable Special*, then you need to add each tour leg from *PhpVms Admin > Flights* interface. When inserting your flights, the tour's legs in particular you need to use the tour code you defined as the route code and you need to define the legs in order. This is a little bit common knowledge about the tours and I think you already know that very well.
@@ -372,6 +381,10 @@ _Not providing attribution link will result in removal of access and no support 
 * Notam Management airport dropdown does not select already assigned/saved airport! Therefore still using old logic and not switched to ajax search.  
 
 ## Release / Update Notes
+
+30.AUG.26
+
+* Added support for Carto API Key usage in Tour Maps
 
 26.JUL.26
 

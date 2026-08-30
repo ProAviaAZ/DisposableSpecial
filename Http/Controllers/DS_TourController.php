@@ -214,6 +214,7 @@ class DS_TourController extends Controller
             'tour_report'   => $tour_report,
             'user'          => isset($user) ? $user : null,
             'units'         => DS_GetUnits(),
+            'carto_apikey'  => DS_Setting('dbasic.carto_api_key', null),
         ]);
     }
 
